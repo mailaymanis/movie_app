@@ -19,7 +19,7 @@ class CustomUpcomingMovies extends StatelessWidget {
           () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => MovieDetailedScreen(movie: model),
+              builder: (context) => MovieDetailedScreen(movie: model,),
             ),
           ),
       child: Container(

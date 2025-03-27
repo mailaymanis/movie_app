@@ -5,7 +5,7 @@ import 'package:movie_app/core/view_model/cubit/movie_cubit.dart';
 import 'package:movie_app/features/detailes/screens/movie_detailed_screen.dart';
 
 class MovieItem extends StatelessWidget {
-  const MovieItem({super.key, required this.cubit, required this.model});
+  const MovieItem({super.key, required this.cubit, required this.model });
   final MovieCubit cubit;
   final MovieModel model;
   @override

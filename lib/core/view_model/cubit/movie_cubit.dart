@@ -3,7 +3,6 @@ import 'package:bloc/bloc.dart';
 import 'package:http/http.dart' as http;
 import 'package:movie_app/core/helper/api_helper.dart';
 import 'package:movie_app/core/models/movie_model.dart';
-import 'package:movie_app/core/models/people_model.dart';
 import 'dart:convert';
 import 'package:movie_app/core/view_model/cubit/movie_states.dart';
 
@@ -97,26 +96,4 @@ class MovieCubit extends Cubit<MovieStates> {
       log(e.toString());
     }
   }
-
-  //get people function
-  List<PeopleModel> people = [];
-  void getPeople() async {
-    emit(PeopleLoadingState());
-    http.Response response = await http.get(Uri.parse(ApiHelper.peopleApi));    
-    try {
-      if (response.statusCode == 200) {
-        var jsonDecoded = jsonDecode(response.body);
-        for (var item in jsonDecoded['results']) {
-          people.add(PeopleModel.fromJson(data: item));
-        }
-        emit(PeopleSuccessState());
-        log("people success${people.length}");
-      } else {
-        emit(PeopleErrorState());
-        log("an error occurred");
-      } 
-    } catch (e) {
-      log(e.toString());        
-    }
-}
 }

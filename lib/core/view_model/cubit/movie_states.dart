@@ -22,8 +22,3 @@ class UpcomingMoviesErrorState extends MovieStates {}
 class NowPlayingMoviesLoadingState extends MovieStates {}
 class NowPlayingMoviesSuccessState extends MovieStates {}
 class NowPlayingMoviesErrorState extends MovieStates {}
-
-//people states
-class PeopleLoadingState extends MovieStates {}
-class PeopleSuccessState extends MovieStates {}
-class PeopleErrorState extends MovieStates {}
