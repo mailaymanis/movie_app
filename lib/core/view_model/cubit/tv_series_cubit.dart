@@ -9,6 +9,7 @@ import 'package:http/http.dart' as http;
 class TvSeriesCubit extends Cubit<TvSeriesStates> {
   TvSeriesCubit() : super(TvSeriesInitialState());
 
+List<TvSeriesModel> tvSeries = [];
   //on the air tv series function
   List<TvSeriesModel> onTheAirTvSeries = [];
   void getOnTheAirTvSeries() async{
