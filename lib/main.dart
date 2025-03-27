@@ -12,5 +12,4 @@ class MovieApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return rootApp();
   }
-
 }
