@@ -1,10 +1,13 @@
 import 'dart:developer';
 import 'package:bloc/bloc.dart';
+import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
 import 'package:movie_app/core/helper/api_helper.dart';
 import 'package:movie_app/core/models/movie_model.dart';
 import 'dart:convert';
 import 'package:movie_app/core/view_model/cubit/movie_states.dart';
+import 'package:movie_app/features/movies/screens/movie_screen.dart';
+import 'package:movie_app/features/tv/screens/tv_series_screen.dart';
 
 class MovieCubit extends Cubit<MovieStates> {
   MovieCubit() : super(MovieInitialState());
@@ -117,5 +120,16 @@ class MovieCubit extends Cubit<MovieStates> {
     } catch (e) {
       log(e.toString());
     }
+  }
+  
+  //changeBottomNav function
+ int bottomNavIndex = 0;
+  List<Widget> screens = const [
+    MovieScreen(),
+    TvSeriesScreen(),
+  ];
+  void changeBottomNav({required int index}) {
+    bottomNavIndex = index;
+    emit(ChangeBottomNavState());
   }
 }

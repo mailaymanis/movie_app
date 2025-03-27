@@ -27,3 +27,6 @@ class NowPlayingMoviesErrorState extends MovieStates {}
 class TrendMoviesLoadingState extends MovieStates {}
 class TrendMoviesSuccessState extends MovieStates {}
 class TrendMoviesErrorState extends MovieStates {}
+
+//bottom nav states
+class ChangeBottomNavState extends MovieStates {}
