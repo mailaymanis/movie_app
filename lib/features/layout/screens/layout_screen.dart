@@ -37,6 +37,7 @@ class LayoutScreen extends StatelessWidget {
               ],
             ),
           ),
+          body: cubit.screens[cubit.bottomNavIndex],
         );
       },
     );
