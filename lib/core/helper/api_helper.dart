@@ -5,5 +5,5 @@ class ApiHelper{
   static const String nowPlayingApi = "https://api.themoviedb.org/3/movie/now_playing?api_key=${AppConstants.apiKey}";
   static const String topRatedApi = "https://api.themoviedb.org/3/movie/top_rated?api_key=${AppConstants.apiKey}";
   static const String upcomingApi = "https://api.themoviedb.org/3/movie/upcoming?api_key=${AppConstants.apiKey}";
-  static const String peopleApi = "https://api.themoviedb.org/3/person/popular";
+  static const String trendingApi = "https://api.themoviedb.org/3/trending/movie/day?api_key=${AppConstants.apiKey}";
 }

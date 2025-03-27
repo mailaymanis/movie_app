@@ -96,4 +96,26 @@ class MovieCubit extends Cubit<MovieStates> {
       log(e.toString());
     }
   }
+  
+  //get trending movies function
+  List<MovieModel> trendingMovies = [];
+  void getTrendingMovies() async {
+    emit(TrendMoviesLoadingState());
+    http.Response response = await http.get(Uri.parse(ApiHelper.trendingApi));
+    try {
+      if (response.statusCode == 200) {
+        var jsonDecoded = jsonDecode(response.body);
+        for (var item in jsonDecoded['results']) {
+          trendingMovies.add(MovieModel.fromJson(data: item));
+        }
+        emit(TrendMoviesSuccessState());
+        log("trending movies success${trendingMovies.length}");
+      } else {
+        emit(TrendMoviesErrorState());
+        log("an error occurred");
+      }
+    } catch (e) {
+      log(e.toString());
+    }
+  }
 }

@@ -19,7 +19,8 @@ class MovieApp extends StatelessWidget {
                 ..getNowPlayingMovies()
                 ..getPopularMovies()
                 ..getTopRatedMovies()
-                ..getUpcomingMovies(),
+                ..getUpcomingMovies()
+                ..getTrendingMovies(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark(),

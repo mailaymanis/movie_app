@@ -22,3 +22,8 @@ class UpcomingMoviesErrorState extends MovieStates {}
 class NowPlayingMoviesLoadingState extends MovieStates {}
 class NowPlayingMoviesSuccessState extends MovieStates {}
 class NowPlayingMoviesErrorState extends MovieStates {}
+
+//trend movies states
+class TrendMoviesLoadingState extends MovieStates {}
+class TrendMoviesSuccessState extends MovieStates {}
+class TrendMoviesErrorState extends MovieStates {}
