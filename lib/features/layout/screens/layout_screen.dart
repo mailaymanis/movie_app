@@ -13,7 +13,7 @@ class LayoutScreen extends StatelessWidget {
     return BlocBuilder<MovieCubit, MovieStates>(
       builder: (context, state) {
         return Scaffold(
-          bottomNavigationBar: SizedBox(
+          bottomNavigationBar:SizedBox(
             width: MediaQuery.sizeOf(context).width,
             child: SalomonBottomBar(
               currentIndex: cubit.bottomNavIndex,
@@ -22,7 +22,7 @@ class LayoutScreen extends StatelessWidget {
               },
               selectedItemColor: Colors.orangeAccent,
               unselectedItemColor: Colors.grey,
-              backgroundColor: Colors.black,
+              backgroundColor: Colors.black54,
               items: [
                 SalomonBottomBarItem(
                   icon: Icon(Icons.movie),
@@ -37,7 +37,6 @@ class LayoutScreen extends StatelessWidget {
               ],
             ),
           ),
-          body:cubit.screens[cubit.bottomNavIndex],
         );
       },
     );
