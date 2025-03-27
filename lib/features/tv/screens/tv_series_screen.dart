@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/core/view_model/cubit/tv_series_cubit.dart';
-import 'package:movie_app/core/view_model/cubit/tv_series_states.dart';
+import 'package:movie_app/core/view_model/cubit/movie_cubit.dart';
+import 'package:movie_app/core/view_model/cubit/movie_states.dart';
 import 'package:movie_app/core/widgets/custom_popular_tv_series.dart';
 import 'package:movie_app/core/widgets/custom_top_rated_tv_series.dart';
 import 'package:movie_app/core/widgets/tv_series_item.dart';
@@ -11,9 +11,9 @@ class TvSeriesScreen extends StatelessWidget {
   const TvSeriesScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<TvSeriesCubit, TvSeriesStates>(
+    return BlocBuilder<MovieCubit, MovieStates>(
       builder: (context, state) {
-        final cubit = BlocProvider.of<TvSeriesCubit>(context);
+        final cubit = BlocProvider.of<MovieCubit>(context);
         return Scaffold(
           appBar: AppBar(
             centerTitle: true,

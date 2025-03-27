@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/helper/constants.dart';
-import 'package:movie_app/core/models/tv_series_model.dart';
+import 'package:movie_app/core/models/movie_model.dart';
+import 'package:movie_app/core/view_model/cubit/movie_cubit.dart';
 import 'package:movie_app/core/widgets/custom_overview_widgets.dart';
+import 'package:movie_app/core/widgets/custom_trending_movies.dart';
 
 class TvSeriesDetailedScreen extends StatelessWidget {
   const TvSeriesDetailedScreen({super.key, required this.tvSeries});
-  final TvSeriesModel tvSeries;
+  final MovieModel tvSeries;
   @override
   Widget build(BuildContext context) {
-    //final cubit = BlocProvider.of<TvSeriesCubit>(context);
+    final cubit = BlocProvider.of<MovieCubit>(context);
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -74,28 +77,28 @@ class TvSeriesDetailedScreen extends StatelessWidget {
               ),
             ),
           ),
-          // SliverPadding(
-          //   padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-          //   sliver: SliverToBoxAdapter(
-          //     child: SizedBox(
-          //       width: MediaQuery.sizeOf(context).width,
-          //       height: 300,
-          //       child: ListView.separated(
-          //         scrollDirection: Axis.horizontal,
-          //         shrinkWrap: true,
-          //         separatorBuilder:
-          //             (context, index) => const SizedBox(width: 30),
-          //         itemCount: cubit..length,
-          //         itemBuilder: (context, index) {
-          //           return CustomTreendingMovies(
-          //             cubit: cubit,
-          //             model: cubit.trendingMovies[index],
-          //           );
-          //         },
-          //       ),
-          //     ),
-          //   ),
-          // ),
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+            sliver: SliverToBoxAdapter(
+              child: SizedBox(
+                width: MediaQuery.sizeOf(context).width,
+                height: 300,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  separatorBuilder:
+                      (context, index) => const SizedBox(width: 30),
+                  itemCount: cubit.trendingMovies.length,
+                  itemBuilder: (context, index) {
+                    return CustomTreendingMovies(
+                      cubit: cubit,
+                      model: cubit.trendingMovies[index],
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

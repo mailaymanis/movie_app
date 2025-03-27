@@ -30,3 +30,18 @@ class TrendMoviesErrorState extends MovieStates {}
 
 //bottom nav states
 class ChangeBottomNavState extends MovieStates {}
+
+//on the air tv series states
+class OnTheAirTvSeriesLoadingState extends MovieStates {}
+class OnTheAirTvSeriesSuccessState extends MovieStates {}
+class OnTheAirTvSeriesErrorState extends MovieStates {}
+
+//top rated tv series states
+class TopRatedTvSeriesLoadingState extends MovieStates {}
+class TopRatedTvSeriesSuccessState extends MovieStates {}
+class TopRatedTvSeriesErrorState extends MovieStates {}
+
+//popular tv series states
+class PopularTvSeriesLoadingState extends MovieStates {}
+class PopularTvSeriesSuccessState extends MovieStates {}
+class PopularTvSeriesErrorState extends MovieStates {}

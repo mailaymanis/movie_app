@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/helper/constants.dart';
-import 'package:movie_app/core/models/tv_series_model.dart';
-import 'package:movie_app/core/view_model/cubit/tv_series_cubit.dart';
+import 'package:movie_app/core/models/movie_model.dart';
+import 'package:movie_app/core/view_model/cubit/movie_cubit.dart';
 import 'package:movie_app/features/detailes/screens/tv_series_detailed_screen.dart';
 
 class CustomPopularTvSeries extends StatelessWidget {
@@ -10,8 +10,8 @@ class CustomPopularTvSeries extends StatelessWidget {
     required this.cubit,
     required this.model,
   });
-  final TvSeriesCubit cubit;
-  final TvSeriesModel model;
+  final MovieCubit cubit;
+  final MovieModel model;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
