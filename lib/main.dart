@@ -13,11 +13,17 @@ class MovieApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => MovieCubit()..getNowPlayingMovies()..getPopularMovies()..getTopRatedMovies()..getUpcomingMovies(),
+      create:
+          (context) =>
+              MovieCubit()
+                ..getNowPlayingMovies()
+                ..getPopularMovies()
+                ..getTopRatedMovies()
+                ..getUpcomingMovies(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark(),
-        home:const MovieScreen(),
+        home: const MovieScreen(),
       ),
     );
   }
