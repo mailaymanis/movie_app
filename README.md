@@ -1,5 +1,3 @@
-# movie_app
-
 # 🎬 Movie App
 
 A modern **Flutter Movie & TV Series application** built with **Flutter and Dart**, designed to provide users with a smooth experience for browsing and discovering movies and TV shows.
